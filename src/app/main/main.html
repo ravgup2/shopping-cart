@@ -1,0 +1,52 @@
+<div class="container">
+  <div ng-show='{{main.selectedProduct }}' class="row list-group">
+        <div class="item col-xs-12 col-lg-12 list-group-item">
+            <div class="thumbnail">
+                <div class="row">
+                <div class="col-xs-12 col-md-2">
+                    <img class="group list-group-image" src="{{main.selectedProduct.imageUrls.md}}" alt="" />
+                 </div>               
+                    <div class="col-xs-12 col-md-8">
+                      <h4 class="group inner list-group-item-heading">
+                          {{main.selectedProduct.disclaimer}}</h4>
+                      <p class="group inner list-group-item-text">
+                          {{main.selectedProduct.description}}</p>
+                      <ul class="fa-ul">
+                        <li ng-repeat="bullet in main.selectedProduct.marketingBullets">
+                        <i class="glyphicon glyphicon-record
+"></i>
+                        {{bullet}}
+                        </li>
+                      </ul>    
+                      </div>    
+                        <div class="col-xs-12 col-md-2">
+                            <p class="lead">
+                                ${{main.selectedProduct.pricing.price.retail}}</p>
+                            <button class="btn btn-success" ng-click="main.showPrice()" >Add to cart</button>    
+                        </div>
+                    </div>
+            </div>
+        </div>
+  </div>
+  <div class="row flex-row">
+    <div class="item  col-xs-12 col-md-4 col-lg-3 grid-group-item row-eq-heightclear" ng-repeat="product in main.productList">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="{{product.imageUrls.sm}}" alt="" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">{{product.description}}</h4>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h4 class="lead">
+                                ${{product.pricing.price.retail}}</h4>
+                        </div>
+                    </div>    
+                    <div class="row">   
+                        <div class="col-xs-12 col-md-12">
+                            <button ng-click="main.selectProduct(product)" class="btn btn-primary btn-lg outline">View More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div><!-- end row --> 
+</div><!-- end container -->

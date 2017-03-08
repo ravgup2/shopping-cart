@@ -1,0 +1,13 @@
+[
+  {
+    "request": {
+      "url": "^/api/products$",
+      "method": "GET"
+    },
+    "response": {
+      "status": 200,
+      "content-type": "application/json",
+      "file": "test/api-mocks/responses/products.json"
+    }
+  }
+]
